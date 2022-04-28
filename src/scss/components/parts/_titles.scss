@@ -1,0 +1,21 @@
+.title {
+  font-weight: 900;
+  font-size: calc(var(--size-m) * 2);
+  line-height: 1.2;
+  color: var(--color-dark-900);
+
+  span {
+    font-weight: inherit;
+    color: var(--color-main);
+  }
+
+  &--sec {
+    font-weight: 700;
+    font-size: var(--size-h3);
+    color: var(--color-dark-900);
+  }
+
+  &--center {
+    text-align: center;
+  }
+}

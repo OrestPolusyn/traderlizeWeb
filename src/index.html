@@ -1,0 +1,28 @@
+@include('html/_head.html',{
+pageTitle:'Home page'
+})
+
+<body class="page__body">
+
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main">
+      @include('html/home/_hero.html')
+
+      @include('html/home/_exchanges.html')
+
+      @include('html/home/_tabs.html')
+
+      @include('html/home/_choose-list.html')
+
+      @include('html/home/_feedbacks.html')
+
+      @include('html/home/_about.html')
+
+      @include('html/home/_talk.html')
+
+      @include('html/home/_contact.html')
+
+    </main>
+    @include('html/_footer.html')

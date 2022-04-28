@@ -1,0 +1,25 @@
+.about-home {
+  padding: rem(220) 0;
+  background-position: right;
+  background-size: 50% 95%;
+  background-repeat: no-repeat;
+
+  &__title {
+    margin-bottom: 36px;
+  }
+
+  &__inner {
+    width: 100%;
+    max-width: 410px;
+
+    p {
+      &:not(:last-of-type) {
+        margin-bottom: rem(30);
+      }
+
+      &:last-of-type {
+        margin-bottom: rem(50);
+      }
+    }
+  }
+}

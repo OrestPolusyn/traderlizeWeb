@@ -1,0 +1,24 @@
+.btn {
+  @include flex-all-center;
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-main);
+  padding: 10px;
+  width: 100%;
+  max-width: 148px;
+  font-weight: 500;
+  font-size: var(--size);
+  line-height: 1.6;
+  white-space: nowrap;
+  text-align: center;
+
+  &__main {
+    color: var(--color-white);
+    background-color: var(--color-main);
+  }
+
+  &__reverse {
+    border-color: var(--color-main);
+    color: var(--color-main);
+  }
+}

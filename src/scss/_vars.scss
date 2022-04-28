@@ -1,0 +1,35 @@
+:root {
+  // base
+  --font-family: "Roboto", sans-serif;
+  --content-width: 1280px;
+  --container-offset: 24px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --header-height: 0;
+
+  // colors
+  --color-white: #fff;
+  --color-background: #f1f6ff;
+  --color-black-900: #272734;
+  --color-black-800: #2c3952;
+  --color-main: #0057ff;
+  --color-gray-300: #e1eafa;
+  --color-gray-400: #687b9e;
+  --color-gray-500: #697c9d;
+  --color-gray-600: #78788e;
+  --color-icon: #8499b1;
+  --color-green-400: #2bbd8a;
+  --color-twitter: hsl(203, 89%, 53%);
+  --color-red: hsl(0, 100%, 50%);
+
+  // font-size
+  --size-xx: 22px;
+  --size-h3: 18px;
+  --size-ml: 16px;
+  --size-m: 15px;
+  --size: 14px;
+  --size-sl: 13px;
+  --size-s: 11px;
+
+  // radius
+  --radius-main: 5px;
+}

@@ -1,0 +1,59 @@
+.social {
+  @include flex-all-sb;
+
+  &__item {
+    &:not(:last-of-type) {
+      margin-right: 15px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    width: 20px;
+    height: 20px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      mask-image: url("../img/sprite.svg#facebook");
+      mask-position: center;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      width: 20px;
+      height: 20px;
+      background-color: var(--color-icon);
+      transition: background-color 0.2s linear;
+    }
+
+    &--fb {
+      &::before {
+        mask-image: url("../img/sprite.svg#facebook");
+      }
+
+      &:hover::before {
+        background-color: var(--color-main);
+      }
+    }
+
+    &--tw {
+      &::before {
+        mask-image: url("../img/sprite.svg#twitter");
+      }
+
+      &:hover::before {
+        background-color: var(--color-twitter);
+      }
+    }
+
+    &--yt {
+      &::before {
+        mask-image: url("../img/sprite.svg#youtube");
+      }
+
+      &:hover::before {
+        background-color: var(--color-red);
+      }
+    }
+  }
+}

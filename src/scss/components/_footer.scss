@@ -1,0 +1,48 @@
+.footer {
+  &__inner {
+    @include flex-s-sb;
+
+    &:first-of-type {
+      border-bottom: 1px solid var(--color-gray-300);
+      padding: rem(50) 0;
+    }
+
+    &:last-of-type {
+      padding: rem(30) 0;
+    }
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 rem(45);
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__list-item {
+    &:not(:last-of-type) {
+      margin-right: 20px;
+    }
+  }
+
+  &__item-title {
+    display: inline-block;
+    margin-bottom: rem(25);
+  }
+
+  &__link {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px 0;
+    font-size: var(--size);
+    line-height: 1;
+    color: var(--color-gray-400);
+  }
+
+  &__content {
+    font-size: var(--size-sl);
+  }
+}
