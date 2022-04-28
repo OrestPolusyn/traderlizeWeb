@@ -1,0 +1,32 @@
+.talk {
+  &__title {
+    margin-bottom: rem(100);
+  }
+
+  &__list {
+    @include flex-all-center;
+  }
+
+  &__item {
+    &:not(:last-of-type) {
+      margin-right: rem(50);
+    }
+  }
+
+  &__link {
+    @include flex-all-center;
+
+    &:hover {
+      .talk__img {
+        filter: grayscale(0);
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 192px;
+    filter: grayscale(1);
+    transition: filter 0.2s ease-in-out;
+  }
+}
