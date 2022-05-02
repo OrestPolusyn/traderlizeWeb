@@ -1,0 +1,52 @@
+.teachers {
+  text-align: center;
+
+  &__title {
+    margin: 0 auto rem(50);
+
+    span {
+      display: block;
+    }
+
+    &--monetize {
+      max-width: 420px;
+
+      span {
+        display: inline;
+      }
+    }
+  }
+
+  &__slider {
+    margin: 0 auto;
+    padding: 0 rem(90);
+    width: 100%;
+    max-width: 1920px;
+
+    .slick-track {
+      padding: 10px 0;
+    }
+  }
+
+  .trader-card {
+    margin: 0 20px;
+    padding: 15px rem(40) 35px;
+
+    &__picture {
+      max-width: 150px;
+    }
+
+    &__name {
+      font-size: calc(var(--size) + 1px);
+    }
+
+    &__tabs .tabs__nav-btn {
+      padding: 4px rem(25);
+      font-size: var(--size-sl);
+    }
+  }
+
+  .slogan {
+    margin-bottom: rem(30);
+  }
+}

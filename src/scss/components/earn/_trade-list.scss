@@ -1,0 +1,30 @@
+.trader-list {
+  &__wrapp {
+    @include flex-ss;
+
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    gap: 0 rem(150);
+  }
+
+  &__inner {
+    flex: 1 1 40%;
+  }
+
+  &__title {
+    width: 100%;
+    max-width: 270px;
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 375px;
+  }
+
+  &__cards {
+    display: grid;
+    flex: 1 1 60%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px 20px;
+  }
+}

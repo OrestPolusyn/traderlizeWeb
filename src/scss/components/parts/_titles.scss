@@ -10,9 +10,11 @@
   }
 
   &--sec {
-    font-weight: 700;
     font-size: var(--size-h3);
-    color: var(--color-dark-900);
+  }
+
+  &--third {
+    font-size: calc(var(--size-sl) * 2);
   }
 
   &--center {

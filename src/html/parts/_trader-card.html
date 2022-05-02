@@ -1,0 +1,85 @@
+<li class="trader-card">
+  <div class="trader-card__picture">
+    <picture>
+      <source srcset="img/trader-card/first.avif" type="image/avif">
+      <source srcset="img/trader-card/first.webp" type="image/webp">
+      <img class="trader-card__image" src="img/trader-card/first.jpg" width="" height="" alt="Trader Olaf Sheppard avatar" loading="lazy">
+    </picture>
+  </div>
+
+  <h3 class="trader-card__name">
+    @name<span class="trader-card__label">pro</span>
+  </h3>
+
+  <div class="trader-card__tabs tabs" data-tabs="trader-@tabName">
+    <ul class="tabs__nav">
+      <li class="tabs__nav-item">
+        <button class="tabs__nav-btn" type="button">
+          Btc
+        </button>
+      </li>
+
+      <li class="tabs__nav-item">
+        <button class="tabs__nav-btn" type="button">
+          Usd
+        </button>
+      </li>
+
+      <li class="tabs__nav-item">
+        <button class="tabs__nav-btn" type="button">
+          Eur
+        </button>
+      </li>
+    </ul>
+
+    <ul class="tabs__content">
+      <li class="tabs__panel">
+        <div class="tabs__panel-items">
+          <span>Monthly P/L</span>
+          <span class="tabs__profit">
+            @btcMonth%
+          </span>
+        </div>
+
+        <div class="tabs__panel-items">
+          <span>Balance</span>
+          <span class="tabs__currency">
+            @btcBalance BTC
+          </span>
+        </div>
+      </li>
+
+      <li class="tabs__panel">
+        <div class="tabs__panel-items">
+          <span>Monthly P/L</span>
+          <span class="tabs__profit">
+            @usdMonth%
+          </span>
+        </div>
+
+        <div class="tabs__panel-items">
+          <span>Balance</span>
+          <span class="tabs__currency">
+            @usdBalance USD
+          </span>
+        </div>
+      </li>
+
+      <li class="tabs__panel">
+        <div class="tabs__panel-items">
+          <span>Monthly P/L</span>
+          <span class="tabs__profit">
+            @eurMonth%
+          </span>
+        </div>
+
+        <div class="tabs__panel-items">
+          <span>Balance</span>
+          <span class="tabs__currency">
+            @eurBalance EUR
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</li>

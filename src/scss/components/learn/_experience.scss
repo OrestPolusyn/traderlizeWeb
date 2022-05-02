@@ -1,0 +1,17 @@
+.experience {
+  &__title {
+    position: absolute;
+    padding-left: 50px;
+    line-height: 1.4;
+
+    span {
+      display: block;
+    }
+  }
+
+  .tabs {
+    &__content {
+      padding-top: 100px;
+    }
+  }
+}

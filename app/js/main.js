@@ -10,9 +10,20 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_headerHeight__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/_headerHeight */ "./src/js/components/_headerHeight.js");
-/* harmony import */ var _components_homeTabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/_homeTabs */ "./src/js/components/_homeTabs.js");
+/* harmony import */ var _components_tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/_tabs */ "./src/js/components/_tabs.js");
 /* harmony import */ var _components_homeTrustpilotSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/_homeTrustpilotSlider */ "./src/js/components/_homeTrustpilotSlider.js");
 /* harmony import */ var _components_homeTrustpilotSlider__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_homeTrustpilotSlider__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_updateYear__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/_updateYear */ "./src/js/components/_updateYear.js");
+/* harmony import */ var _components_updateYear__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_updateYear__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_faqTabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/_faqTabs */ "./src/js/components/_faqTabs.js");
+/* harmony import */ var _components_faqTabs__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_faqTabs__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_formInputFocus__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/_formInputFocus */ "./src/js/components/_formInputFocus.js");
+/* harmony import */ var _components_teachersSlider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/_teachersSlider */ "./src/js/components/_teachersSlider.js");
+/* harmony import */ var _components_teachersSlider__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_components_teachersSlider__WEBPACK_IMPORTED_MODULE_6__);
+
+
+
+
 
 
 
@@ -23,8 +34,11 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************!*\
   !*** ./src/js/_functions.js ***!
   \******************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _functions_fix_fullheight__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions/fix-fullheight */ "./src/js/functions/fix-fullheight.js");
 // Определение операционной системы на мобильных
 // import { mobileCheck } from "./functions/mobile-check";
 // console.log(mobileCheck())
@@ -33,14 +47,7 @@ __webpack_require__.r(__webpack_exports__);
 // if (isDesktop()) {
 //   console.log('...')
 // }
-// Троттлинг функции (для ресайза, ввода в инпут, скролла и т.д.)
-// import { throttle } from './functions/throttle';
-// let yourFunc = () => { console.log('throttle') };
-// let func = throttle(yourFunc);
-// window.addEventListener('resize', func);
-// Фикс фулскрин-блоков
-// import './functions/fix-fullheight';
-// Реализация бургер-меню
+ // Реализация бургер-меню
 // import { burger } from './functions/burger';
 // Реализация остановки скролла (не забудьте вызвать функцию)
 // import { disableScroll } from './functions/disable-scroll';
@@ -96,8 +103,96 @@ __webpack_require__.r(__webpack_exports__);
   windowEl: window,
   documentEl: document,
   htmlEl: document.documentElement,
-  bodyEl: document.body
+  bodyEl: document.body,
+  inputsFrom: document.querySelectorAll('.form__input')
 });
+
+/***/ }),
+
+/***/ "./src/js/components/_faqTabs.js":
+/*!***************************************!*\
+  !*** ./src/js/components/_faqTabs.js ***!
+  \***************************************/
+/***/ (() => {
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var question = _toConsumableArray(document.querySelectorAll(".faq__item-title"));
+
+question.forEach(function (question) {
+  question.addEventListener("click", function (event) {
+    var active = document.querySelector(".faq__item.faq__item--open");
+
+    if (active && active !== question.parentNode) {
+      active.classList.toggle("faq__item--open");
+      active.querySelector('.faq__item-content').style.maxHeight = 0;
+    }
+
+    question.parentNode.classList.toggle("faq__item--open");
+    var answer = question.nextElementSibling;
+
+    if (question.parentNode.classList.contains("faq__item--open")) {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    } else {
+      answer.style.maxHeight = 0;
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./src/js/components/_formInputFocus.js":
+/*!**********************************************!*\
+  !*** ./src/js/components/_formInputFocus.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vars */ "./src/js/_vars.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
+var fieldArray = _toConsumableArray(_vars__WEBPACK_IMPORTED_MODULE_0__["default"].inputsFrom);
+
+if (fieldArray.length > 0) {
+  fieldArray.forEach(function (element) {
+    element.addEventListener('focus', function () {
+      this.parentElement.classList.add('focused');
+    });
+    element.addEventListener('blur', function () {
+      var inputValue = this.value;
+
+      if (inputValue == "") {
+        this.classList.remove('filled');
+        this.parentElement.classList.remove('focused');
+      } else {
+        this.classList.add('filled');
+      }
+    });
+  });
+}
 
 /***/ }),
 
@@ -115,35 +210,141 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/js/components/_homeTabs.js":
-/*!****************************************!*\
-  !*** ./src/js/components/_homeTabs.js ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var graph_tabs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! graph-tabs */ "./node_modules/graph-tabs/src/graph-tabs.js");
-
-var tabs = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('home-tab');
-
-/***/ }),
-
 /***/ "./src/js/components/_homeTrustpilotSlider.js":
 /*!****************************************************!*\
   !*** ./src/js/components/_homeTrustpilotSlider.js ***!
   \****************************************************/
 /***/ (() => {
 
-var swiper = new Swiper('.swiper', {
-  slidesPerView: 3,
-  loop: true,
-  spaceBetween: 130,
-  navigation: {
-    nextEl: '.feedbacks__button-next',
-    prevEl: '.feedbacks__button-prev'
-  }
+// const swiper = new Swiper('.swiper', {
+//   slidesPerView: 3,
+//   loop: true,
+//   spaceBetween: 130,
+//   navigation: {
+//     nextEl: '.feedbacks__button-next',
+//     prevEl: '.feedbacks__button-prev',
+//   },
+// });
+$('.feedbacks__slider').slick({
+  slidesToShow: 3,
+  infinite: true,
+  rows: 0,
+  centered: true,
+  responsive: [{
+    breakpoint: 1440,
+    settings: {// slidesToShow: 4,
+    }
+  }, {
+    breakpoint: 1180,
+    settings: {// slidesToShow: 3,
+    }
+  }]
 });
+
+/***/ }),
+
+/***/ "./src/js/components/_tabs.js":
+/*!************************************!*\
+  !*** ./src/js/components/_tabs.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var graph_tabs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! graph-tabs */ "./node_modules/graph-tabs/src/graph-tabs.js");
+
+
+if (document.querySelector('[data-tabs=home-tabs]')) {
+  var tabsHome = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('home-tabs');
+}
+
+if (document.querySelector('[data-tabs=trader-olaf]')) {
+  var tabsOlaf = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('trader-olaf');
+}
+
+if (document.querySelector('[data-tabs=trader-nikki]')) {
+  var tabsNikki = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('trader-nikki');
+}
+
+if (document.querySelector('[data-tabs=trader-jagdeep]')) {
+  var tabsJagdeep = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('trader-jagdeep');
+}
+
+if (document.querySelector('[data-tabs=trader-pierce]')) {
+  var tabsPierce = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('trader-pierce');
+}
+
+if (document.querySelector('[data-tabs=trader-mahad]')) {
+  var tabsMahad = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('trader-mahad');
+}
+
+if (document.querySelector('[data-tabs=trader-wendy]')) {
+  var tabsWendy = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('trader-wendy');
+}
+
+if (document.querySelector('[data-tabs=experience-tab]')) {
+  var _tabsWendy = new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('experience-tab');
+}
+
+/***/ }),
+
+/***/ "./src/js/components/_teachersSlider.js":
+/*!**********************************************!*\
+  !*** ./src/js/components/_teachersSlider.js ***!
+  \**********************************************/
+/***/ (() => {
+
+$('.teachers__slider').slick({
+  arrows: false,
+  slidesToShow: 5,
+  infinite: true,
+  rows: 0,
+  centered: true,
+  responsive: [{
+    breakpoint: 1440,
+    settings: {
+      slidesToShow: 4
+    }
+  }, {
+    breakpoint: 1180,
+    settings: {
+      slidesToShow: 3
+    }
+  }]
+});
+
+/***/ }),
+
+/***/ "./src/js/components/_updateYear.js":
+/*!******************************************!*\
+  !*** ./src/js/components/_updateYear.js ***!
+  \******************************************/
+/***/ (() => {
+
+var updateYear = new Date().getFullYear();
+document.querySelector('.footer__year').innerText = updateYear;
+
+/***/ }),
+
+/***/ "./src/js/functions/fix-fullheight.js":
+/*!********************************************!*\
+  !*** ./src/js/functions/fix-fullheight.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _throttle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./throttle */ "./src/js/functions/throttle.js");
+
+
+var fixFullheight = function fixFullheight() {
+  var vh = window.innerHeight;
+  document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
+};
+
+var fixHeight = (0,_throttle__WEBPACK_IMPORTED_MODULE_0__.throttle)(fixFullheight);
+fixHeight();
+window.addEventListener('resize', fixHeight);
 
 /***/ }),
 
@@ -163,6 +364,48 @@ var getHeaderHeight = function getHeaderHeight() {
 
   var headerHeight = (_document = document) === null || _document === void 0 ? void 0 : _document.querySelector('.header').offsetHeight;
   document.querySelector(':root').style.setProperty('--header-height', "".concat(headerHeight, "px"));
+};
+
+/***/ }),
+
+/***/ "./src/js/functions/throttle.js":
+/*!**************************************!*\
+  !*** ./src/js/functions/throttle.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "throttle": () => (/* binding */ throttle)
+/* harmony export */ });
+var throttle = function throttle(func) {
+  var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 250;
+  var isThrottled = false;
+  var savedArgs = null;
+  var savedThis = null;
+  return function wrap() {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    if (isThrottled) {
+      savedArgs = args, savedThis = this;
+      return;
+    }
+
+    func.apply(this, args);
+    isThrottled = true;
+    setTimeout(function () {
+      isThrottled = false;
+
+      if (savedThis) {
+        wrap.apply(savedThis, savedArgs);
+        savedThis = null;
+        savedArgs = null;
+      }
+    }, delay);
+  };
 };
 
 /***/ }),
@@ -372,7 +615,6 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_vars */ "./src/js/_vars.js");
 /* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_functions */ "./src/js/_functions.js");
-/* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_functions__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_components */ "./src/js/_components.js");
 
 

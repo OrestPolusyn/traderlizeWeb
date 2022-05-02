@@ -1,0 +1,32 @@
+@include('html/_head.html',{
+pageTitle:'Learn professionals'
+})
+
+<body class="page__body">
+
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main">
+      @include('html/learn/_hero.html')
+
+      @include('html/learn/_teachers.html')
+
+      @include('html/parts/_talk.html',{
+      background:''
+      })
+
+      @include('html/learn/_experience.html')
+
+      @include('html/learn/_additional.html')
+
+      @include('html/parts/_feedbacks.html')
+
+      @include('html/parts/_faq.html')
+
+      @include('html/parts/_contact.html',{
+      background:'background'
+      })
+
+    </main>
+    @include('html/_footer.html')

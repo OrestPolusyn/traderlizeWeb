@@ -12,6 +12,12 @@
   }
 
   * {
-    margin-bottom: rem(40);
+    &:not(:last-child) {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &.background {
+    border-bottom: 1px solid var(--color-gray-200);
   }
 }

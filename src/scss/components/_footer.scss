@@ -10,12 +10,17 @@
     &:last-of-type {
       padding: rem(30) 0;
     }
+
+    .wrapper {
+      align-items: flex-start;
+      width: 100%;
+    }
   }
 
   &__links {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0 rem(45);
+    gap: 0 rem(70);
   }
 
   &__list {

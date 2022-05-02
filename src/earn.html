@@ -1,0 +1,40 @@
+@include('html/_head.html',{
+pageTitle:'Earn with professionals'
+})
+
+<body class="page__body">
+
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main">
+      @include('html/earn/_hero.html')
+
+      @include('html/earn/_additional.html')
+
+      @include('html/earn/_trader-list.html')
+
+      @include('html/parts/_talk.html',{
+      background:'background'
+      })
+
+      @include('html/earn/_lose-profit.html')
+
+      @include('html/earn/_real-stat.html')
+
+      @include('html/earn/_decisions.html')
+
+      @include('html/earn/_start-earning.html')
+
+      @include('html/parts/_safe.html')
+
+      @include('html/parts/_feedbacks.html')
+
+      @include('html/parts/_faq.html')
+
+      @include('html/parts/_contact.html',{
+      background:'background'
+      })
+
+    </main>
+    @include('html/_footer.html')

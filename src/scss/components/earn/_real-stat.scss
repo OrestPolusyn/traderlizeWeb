@@ -1,0 +1,12 @@
+.real-stat {
+  &__inner {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .side-content {
+    &__title {
+      margin-right: 50px;
+    }
+  }
+}

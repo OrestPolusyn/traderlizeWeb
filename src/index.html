@@ -16,13 +16,17 @@ pageTitle:'Home page'
 
       @include('html/home/_choose-list.html')
 
-      @include('html/home/_feedbacks.html')
+      @include('html/parts/_feedbacks.html')
 
       @include('html/home/_about.html')
 
-      @include('html/home/_talk.html')
+      @include('html/parts/_talk.html',{
+      background:'background'
+      })
 
-      @include('html/home/_contact.html')
+      @include('html/parts/_contact.html',{
+      background:''
+      })
 
     </main>
     @include('html/_footer.html')

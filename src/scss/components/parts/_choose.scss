@@ -1,0 +1,149 @@
+.choose {
+  position: relative;
+
+  &__title {
+    margin-bottom: rem(90);
+
+    span {
+      display: block;
+    }
+
+    &--monetize {
+      span {
+        display: inline;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: rem(50);
+    gap: rem(65) rem(170);
+
+    &--space {
+      margin-bottom: 0;
+    }
+
+    &--monetize {
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      max-width: 700px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-top: 85px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      width: 60px;
+      height: 60px;
+      background-color: var(--color-main);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: 1px solid var(--color-main);
+      border-radius: calc(var(--radius-main) * 2);
+      width: 60px;
+      height: 60px;
+    }
+
+    &--worldwide {
+      &::before {
+        mask-image: url("../img/sprite.svg#worldwide");
+        mask-size: 28px;
+      }
+    }
+
+    &--subscribe {
+      &::before {
+        mask-image: url("../img/sprite.svg#subscribe");
+        mask-size: 28px;
+      }
+    }
+
+    &--risks {
+      &::before {
+        mask-image: url("../img/sprite.svg#risks");
+        mask-size: 28px;
+      }
+    }
+
+    &--handshake {
+      &::before {
+        mask-image: url("../img/sprite.svg#handshake");
+        mask-size: 28px;
+      }
+    }
+
+    &--robot {
+      &::before {
+        mask-image: url("../img/sprite.svg#robot");
+        mask-size: 28px;
+      }
+    }
+
+    &--team {
+      &::before {
+        mask-image: url("../img/sprite.svg#team");
+        mask-size: 28px;
+      }
+    }
+
+    &--double {
+      &::before {
+        mask-image: url("../img/sprite.svg#double-coin");
+        mask-size: 28px;
+      }
+    }
+
+    &--up-gram {
+      &::before {
+        mask-image: url("../img/sprite.svg#up-gram");
+        mask-size: 28px;
+      }
+    }
+
+    &--clock {
+      &::before {
+        mask-image: url("../img/sprite.svg#clock");
+        mask-size: 28px;
+      }
+    }
+  }
+
+  &__item-title {
+    margin-bottom: rem(18);
+    font-size: var(--size-h3);
+  }
+
+  &--background {
+    &::before {
+      content: "";
+      position: absolute;
+      right: -10%;
+      bottom: 0;
+      width: 40%;
+      height: 90%;
+      background-image: url("../img/earn/additional-bg.svg");
+      background-position: left top;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .wrapper {
+    align-items: flex-start;
+  }
+}

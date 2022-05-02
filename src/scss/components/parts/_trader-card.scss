@@ -1,0 +1,91 @@
+.trader-card {
+  border-radius: var(--radius-main);
+  padding: 15px 20px 35px;
+  box-shadow: 0 0 6px 2px rgb(11, 13, 26, 0.1);
+  text-align: center;
+  background-color: var(--color-white);
+
+  &__picture {
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border-radius: var(--radius-main);
+    width: 100%;
+    max-width: 75px;
+  }
+
+  &__tabs {
+    margin: 0 auto;
+
+    .tabs {
+      &__nav {
+        justify-content: center;
+        margin: 0 auto 20px;
+        border: 1px solid var(--color-gray-100);
+        border-radius: var(--radius-main);
+        width: fit-content;
+      }
+
+      &__nav-btn {
+        padding: 4px 10px;
+        font-size: calc(var(--size-sl) - 1);
+        text-transform: uppercase;
+        color: var(--color-gray-600);
+
+        &:focus {
+          background-color: var(--color-gray-100);
+        }
+
+        &--active {
+          color: var(--color-black-900);
+          background-color: var(--color-gray-100);
+        }
+      }
+
+      &__panel-items {
+        @include flex-all-sb;
+
+        font-size: var(--size-sl);
+        line-height: 1;
+
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+      }
+
+      &__profit {
+        position: relative;
+        color: var(--color-green-500);
+
+        &::before {
+          content: "+";
+          position: absolute;
+          left: 0;
+          transform: translateX(-110%);
+        }
+      }
+
+      &__currency {
+        color: var(--color-main);
+      }
+    }
+  }
+
+  &__name {
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: calc(var(--size-s) + 1);
+    text-transform: capitalize;
+  }
+
+  &__label {
+    display: inline-block;
+    margin-left: 6px;
+    border: 1px solid var(--color-main);
+    border-radius: var(--radius-main);
+    padding: 3px 5px;
+    font-weight: 500;
+    font-size: var(--size-s);
+    text-transform: uppercase;
+    color: var(--color-main);
+  }
+}

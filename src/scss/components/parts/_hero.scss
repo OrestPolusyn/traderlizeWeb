@@ -1,0 +1,149 @@
+.hero {
+  @include flex-all-sb;
+
+  margin-bottom: rem(150);
+  padding-top: var(--header-height);
+  padding-left: max(var(--container-offset), calc((100% - 1440px) / 2));
+  height: var(--vh);
+
+  &__content {
+    margin-right: 20px;
+    width: 100%;
+    max-width: 560px;
+
+    &--earn {
+      .content {
+        margin-bottom: rem(40);
+      }
+    }
+  }
+
+  &__animation {
+    width: calc(100% - 770px);
+    max-width: 900px;
+
+    &--monitaze {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 1100px;
+      transform: translate(30%, 25%);
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(50);
+    width: 100%;
+    max-width: 505px;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 1.5;
+
+    span {
+      display: inline-block;
+      font-weight: inherit;
+      color: var(--color-main);
+    }
+  }
+
+  &__action {
+    @include flex-v-center;
+
+    margin-bottom: rem(127);
+
+    .btn {
+      margin-right: clamp(15px, rem(25), 30px);
+    }
+  }
+
+  &__review {
+    @include flex-all-center;
+
+    font-weight: 500;
+    font-size: var(--size);
+    color: var(--color-gray-400);
+  }
+
+  &__review-picture {
+    @include flex-all-center;
+
+    margin-left: 16px;
+    border-radius: calc(var(--radius-main) * 2);
+    background-color: var(--color-white);
+  }
+
+  &__review-img {
+    width: 100%;
+    max-width: 100px;
+  }
+
+  &__numbers {
+    @include flex;
+  }
+
+  &__number {
+    width: 100%;
+    max-width: 80px;
+
+    &:not(:last-child) {
+      margin-right: rem(85);
+    }
+  }
+
+  &__number-title {
+    font-weight: 900;
+    font-size: var(--size-xx);
+    line-height: 1;
+    color: var(--color-main);
+  }
+
+  &__form {
+    border-radius: calc(var(--radius-main) * 2);
+    padding: rem(50);
+    width: 100%;
+    max-width: 440px;
+    background-color: var(--color-white);
+  }
+
+  &__form-title.title {
+    margin-bottom: rem(30);
+    font-size: calc(var(--size-sl) * 2);
+    color: var(--color-main);
+  }
+
+  &--earn {
+    margin-bottom: rem(50);
+  }
+
+  &--background {
+    @include bg-cover;
+
+    margin-bottom: 0;
+    padding-left: 0;
+
+    .wrapper {
+      justify-content: space-between;
+    }
+
+    .content {
+      margin-bottom: rem(140);
+    }
+
+    .hero__action {
+      margin-bottom: 0;
+    }
+  }
+
+  &--monitaze {
+    @include bg-cover;
+
+    .content {
+      margin-bottom: rem(40);
+    }
+  }
+
+  @include for-width(+desktop-xl) {
+    padding-right: max(var(--container-offset), calc((100% - var(--content-width)) / 7));
+  }
+}

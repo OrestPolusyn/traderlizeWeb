@@ -21,12 +21,12 @@
   }
 
   &__item {
+    flex: 1 1 15%;
+    margin-bottom: 15px;
+    text-align: center;
+
     &:not(:last-of-type) {
       margin-right: 15px;
-    }
-
-    @include for-width(-desktop-s) {
-      margin: 0 rem(50) 20px;
     }
   }
 

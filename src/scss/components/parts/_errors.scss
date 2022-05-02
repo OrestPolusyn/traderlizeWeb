@@ -1,0 +1,21 @@
+.error {
+  position: relative;
+  color: var(--color-red);
+
+  &__message {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: var(--size-sl);
+    color: var(--color-red);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%);
+  }
+
+  .form__input {
+    border-bottom-color: var(--color-red);
+    color: var(--color-red);
+  }
+}

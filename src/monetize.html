@@ -1,0 +1,36 @@
+@include('html/_head.html',{
+pageTitle:'Monetize brand'
+})
+
+<body class="page__body">
+
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main">
+      @include('html/monetize/_hero.html')
+
+      @include('html/monetize/_teachers.html')
+
+      @include('html/parts/_talk.html',{
+      background:''
+      })
+
+      @include('html/monetize/_earn.html')
+
+      @include('html/monetize/_selling.html')
+
+      @include('html/monetize/_list.html')
+
+      @include('html/monetize/_list-need.html')
+
+      @include('html/parts/_feedbacks.html')
+
+      @include('html/parts/_faq.html')
+
+      @include('html/parts/_contact.html',{
+      background:'background'
+      })
+
+    </main>
+    @include('html/_footer.html')

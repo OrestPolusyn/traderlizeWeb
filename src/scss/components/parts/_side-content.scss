@@ -1,0 +1,45 @@
+.side-content {
+  >*:not(:last-child) {
+    margin-bottom: rem(40);
+  }
+
+  &__title {
+    span {
+      display: block;
+    }
+  }
+
+  &__items {
+    counter-reset: heading;
+  }
+
+  &__item {
+    @include flex-v-center;
+
+    line-height: 2.24;
+
+    &::before {
+      @include flex-all-center;
+
+      counter-increment: heading;
+      content: counter(heading);
+      position: absolute;
+      border-radius: var(--radius-main);
+      width: 40px;
+      height: 40px;
+      font-weight: 900;
+      color: var(--color-white);
+      background-color: var(--color-main);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__item-text {
+    padding-left: 55px;
+    font-weight: 700;
+    font-size: var(--size-h3);
+  }
+}

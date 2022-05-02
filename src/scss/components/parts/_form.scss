@@ -1,0 +1,41 @@
+.form {
+  &__field {
+    position: relative;
+
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+
+    &.focused {
+      .form__label {
+        top: 0;
+        font-size: var(--size-sl);
+        transform: translateY(-20%);
+      }
+    }
+  }
+
+  &__input {
+    border-bottom: 1px solid var(--color-gray-300);
+    padding: 18px 0 10px;
+    width: 100%;
+    line-height: 1;
+  }
+
+  &__label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    font-size: var(--size-ml);
+    transform: translateY(-40%);
+    transition: transform 0.15s linear, top 0.15s linear;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+}

@@ -235,6 +235,10 @@ button:active {
   cursor: pointer;
 }
 
+picture {
+  display: flex;
+}
+
 input {
   -webkit-appearance: none;
   appearance: none;
